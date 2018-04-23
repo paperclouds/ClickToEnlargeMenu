@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>color</key>
+		<string>#fcd46f</string>
+		<key>text</key>
+		<string>Power bank</string>
+		<key>image</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#fba649</string>
+		<key>text</key>
+		<string>Headset</string>
+		<key>image</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#ed8c77</string>
+		<key>text</key>
+		<string>EarPhone</string>
+		<key>image</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#ec6750</string>
+		<key>text</key>
+		<string>Light</string>
+		<key>image</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#ed499c</string>
+		<key>text</key>
+		<string>Filter</string>
+		<key>image</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
