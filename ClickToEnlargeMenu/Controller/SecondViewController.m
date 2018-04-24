@@ -12,10 +12,11 @@
 #define CellID @"CellID"
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
+#define HeaderHeight 250
 
 @interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *imageArray;
+@property(nonatomic, strong) UIImageView *bgImgView;    //背景图片
 
 @end
 
@@ -24,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self initData];
     
     [self buildUI];
 }
@@ -40,24 +39,15 @@
     [self.navigationController.navigationBar setHidden:NO];
 }
 
-- (void)initData{
-    self.imageArray = @[@"0",@"1",@"2",@"3",@"4"];
-}
-
 - (void)buildUI{
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    if (@available(iOS 11.0, *)) {
-        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    [self buildTableHeadView];
 
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
-    self.tableView.tableHeaderView = self.topImageView;
+    
+    [self buildTableHeadView];
     
     UIButton *backBtn = [[UIButton alloc] init];
     backBtn.frame = CGRectMake(20, 20, 50, 50);
@@ -67,10 +57,17 @@
 }
 
 - (void)buildTableHeadView{
-    self.topImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.imageArray[self.index]]];
+    
+    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, HeaderHeight)];
+    headerView.backgroundColor = [UIColor clearColor];
+    
+    self.topImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld",_index]]];
     self.topImageView.userInteractionEnabled = YES;
-    self.topImageView.frame = CGRectMake(0, 0, screenWidth, 300);
-    [self.view addSubview:self.topImageView];
+    self.topImageView.frame = CGRectMake(0, 0, screenWidth, HeaderHeight);
+    [headerView addSubview:self.topImageView];
+    self.bgImgView = self.topImageView;
+    
+    self.tableView.tableHeaderView = headerView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -94,6 +91,19 @@
 
 - (void)clickBackBtn {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    if (offsetY < 0) {
+        CGFloat totalOffsetY = HeaderHeight + ABS(offsetY);
+        CGFloat f = totalOffsetY / HeaderHeight;
+        
+        self.bgImgView.frame = CGRectMake(- (screenWidth * f - screenWidth) / 2, offsetY, screenWidth * f, totalOffsetY);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,7 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:0.8];
         self.layer.cornerRadius = 5;
         [self.contentView addSubview:self.imageView];
         [self.contentView addSubview:self.titleLbl];
