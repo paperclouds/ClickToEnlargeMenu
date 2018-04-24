@@ -8,8 +8,6 @@
 
 #import "CollectionViewCell.h"
 
-//#define labelWidth
-
 @implementation CollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -18,6 +16,7 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:0.8];
         self.layer.cornerRadius = 5;
+        [self.contentView addSubview:self.imageView];
         [self.contentView addSubview:self.titleLbl];
     }
     return self;
@@ -34,6 +33,17 @@
         self.titleLbl.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLbl;
+}
+
+-(UIImageView *)imageView{
+    if (_imageView == nil) {
+        self.imageView = [[UIImageView alloc]init];
+        self.imageView.frame = self.bounds;
+        self.imageView.layer.cornerRadius = 5;
+        self.imageView.layer.masksToBounds = YES;
+        self.imageView.hidden = YES;
+    }
+    return _imageView;
 }
 
 @end

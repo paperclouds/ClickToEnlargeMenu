@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1CC37C208EF5240029882E /* UIColor+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC36F208EF5230029882E /* UIColor+Extend.m */; };
+		AA1CC37D208EF5240029882E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC374208EF5240029882E /* ViewController.m */; };
+		AA1CC37E208EF5240029882E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC375208EF5240029882E /* SecondViewController.m */; };
+		AA1CC37F208EF5240029882E /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC378208EF5240029882E /* LineLayout.m */; };
+		AA1CC380208EF5240029882E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC37A208EF5240029882E /* CollectionViewCell.m */; };
+		AAABE471208DCF86001DBEA3 /* ADCardTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABE46F208DCF86001DBEA3 /* ADCardTransition.m */; };
 		AAE2BBE82089D7FA0048D429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BBE72089D7FA0048D429 /* AppDelegate.m */; };
-		AAE2BBEB2089D7FA0048D429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BBEA2089D7FA0048D429 /* ViewController.m */; };
 		AAE2BBEE2089D7FA0048D429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE2BBEC2089D7FA0048D429 /* Main.storyboard */; };
 		AAE2BBF02089D7FC0048D429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE2BBEF2089D7FC0048D429 /* Assets.xcassets */; };
 		AAE2BBF32089D7FC0048D429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE2BBF12089D7FC0048D429 /* LaunchScreen.storyboard */; };
 		AAE2BBF62089D7FC0048D429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BBF52089D7FC0048D429 /* main.m */; };
 		AAE2BC002089D7FC0048D429 /* ClickToEnlargeMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BBFF2089D7FC0048D429 /* ClickToEnlargeMenuTests.m */; };
 		AAE2BC0B2089D7FC0048D429 /* ClickToEnlargeMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BC0A2089D7FC0048D429 /* ClickToEnlargeMenuUITests.m */; };
-		AAE2BC1A2089D9AD0048D429 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BC192089D9AD0048D429 /* LineLayout.m */; };
-		AAE2BC1D2089E3290048D429 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BC1C2089E3290048D429 /* CollectionViewCell.m */; };
 		AAE2BC1F2089EB0E0048D429 /* DataPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAE2BC1E2089EB0E0048D429 /* DataPlist.plist */; };
-		AAE2BC222089EFB30048D429 /* UIColor+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2BC212089EFB30048D429 /* UIColor+Extend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +41,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA1CC36F208EF5230029882E /* UIColor+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extend.m"; sourceTree = "<group>"; };
+		AA1CC370208EF5230029882E /* UIColor+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extend.h"; sourceTree = "<group>"; };
+		AA1CC373208EF5240029882E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		AA1CC374208EF5240029882E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AA1CC375208EF5240029882E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		AA1CC376208EF5240029882E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AA1CC378208EF5240029882E /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
+		AA1CC379208EF5240029882E /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		AA1CC37A208EF5240029882E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		AA1CC37B208EF5240029882E /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		AAABE46F208DCF86001DBEA3 /* ADCardTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCardTransition.m; sourceTree = "<group>"; };
+		AAABE470208DCF86001DBEA3 /* ADCardTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCardTransition.h; sourceTree = "<group>"; };
 		AAE2BBE32089D7FA0048D429 /* ClickToEnlargeMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickToEnlargeMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE2BBE62089D7FA0048D429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAE2BBE72089D7FA0048D429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAE2BBE92089D7FA0048D429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAE2BBEA2089D7FA0048D429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AAE2BBED2089D7FA0048D429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE2BBEF2089D7FC0048D429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE2BBF22089D7FC0048D429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,13 +67,7 @@
 		AAE2BC062089D7FC0048D429 /* ClickToEnlargeMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClickToEnlargeMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE2BC0A2089D7FC0048D429 /* ClickToEnlargeMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickToEnlargeMenuUITests.m; sourceTree = "<group>"; };
 		AAE2BC0C2089D7FC0048D429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAE2BC182089D9AD0048D429 /* LineLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
-		AAE2BC192089D9AD0048D429 /* LineLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
-		AAE2BC1B2089E3290048D429 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		AAE2BC1C2089E3290048D429 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		AAE2BC1E2089EB0E0048D429 /* DataPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DataPlist.plist; sourceTree = "<group>"; };
-		AAE2BC202089EFB30048D429 /* UIColor+Extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extend.h"; sourceTree = "<group>"; };
-		AAE2BC212089EFB30048D429 /* UIColor+Extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extend.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1CC36E208EF5230029882E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AA1CC36F208EF5230029882E /* UIColor+Extend.m */,
+				AA1CC370208EF5230029882E /* UIColor+Extend.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AA1CC372208EF5240029882E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA1CC376208EF5240029882E /* ViewController.h */,
+				AA1CC374208EF5240029882E /* ViewController.m */,
+				AA1CC373208EF5240029882E /* SecondViewController.h */,
+				AA1CC375208EF5240029882E /* SecondViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA1CC377208EF5240029882E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA1CC37B208EF5240029882E /* LineLayout.h */,
+				AA1CC378208EF5240029882E /* LineLayout.m */,
+				AA1CC379208EF5240029882E /* CollectionViewCell.h */,
+				AA1CC37A208EF5240029882E /* CollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAABE46E208DCF86001DBEA3 /* ADCardTransition */ = {
+			isa = PBXGroup;
+			children = (
+				AAABE470208DCF86001DBEA3 /* ADCardTransition.h */,
+				AAABE46F208DCF86001DBEA3 /* ADCardTransition.m */,
+			);
+			path = ADCardTransition;
+			sourceTree = "<group>";
+		};
 		AAE2BBDA2089D7FA0048D429 = {
 			isa = PBXGroup;
 			children = (
@@ -112,22 +158,18 @@
 		AAE2BBE52089D7FA0048D429 /* ClickToEnlargeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				AA1CC36E208EF5230029882E /* Category */,
+				AA1CC372208EF5240029882E /* Controller */,
+				AA1CC377208EF5240029882E /* View */,
+				AAABE46E208DCF86001DBEA3 /* ADCardTransition */,
 				AAE2BBE62089D7FA0048D429 /* AppDelegate.h */,
 				AAE2BBE72089D7FA0048D429 /* AppDelegate.m */,
-				AAE2BBE92089D7FA0048D429 /* ViewController.h */,
-				AAE2BBEA2089D7FA0048D429 /* ViewController.m */,
-				AAE2BC182089D9AD0048D429 /* LineLayout.h */,
-				AAE2BC192089D9AD0048D429 /* LineLayout.m */,
-				AAE2BC1B2089E3290048D429 /* CollectionViewCell.h */,
-				AAE2BC1C2089E3290048D429 /* CollectionViewCell.m */,
 				AAE2BBEC2089D7FA0048D429 /* Main.storyboard */,
 				AAE2BBEF2089D7FC0048D429 /* Assets.xcassets */,
 				AAE2BBF12089D7FC0048D429 /* LaunchScreen.storyboard */,
 				AAE2BBF42089D7FC0048D429 /* Info.plist */,
 				AAE2BBF52089D7FC0048D429 /* main.m */,
 				AAE2BC1E2089EB0E0048D429 /* DataPlist.plist */,
-				AAE2BC202089EFB30048D429 /* UIColor+Extend.h */,
-				AAE2BC212089EFB30048D429 /* UIColor+Extend.m */,
 			);
 			path = ClickToEnlargeMenu;
 			sourceTree = "<group>";
@@ -281,12 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE2BBEB2089D7FA0048D429 /* ViewController.m in Sources */,
-				AAE2BC222089EFB30048D429 /* UIColor+Extend.m in Sources */,
-				AAE2BC1D2089E3290048D429 /* CollectionViewCell.m in Sources */,
-				AAE2BC1A2089D9AD0048D429 /* LineLayout.m in Sources */,
+				AA1CC37F208EF5240029882E /* LineLayout.m in Sources */,
+				AA1CC37E208EF5240029882E /* SecondViewController.m in Sources */,
 				AAE2BBF62089D7FC0048D429 /* main.m in Sources */,
 				AAE2BBE82089D7FA0048D429 /* AppDelegate.m in Sources */,
+				AAABE471208DCF86001DBEA3 /* ADCardTransition.m in Sources */,
+				AA1CC37C208EF5240029882E /* UIColor+Extend.m in Sources */,
+				AA1CC380208EF5240029882E /* CollectionViewCell.m in Sources */,
+				AA1CC37D208EF5240029882E /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MC29DLSP7;
 				INFOPLIST_FILE = ClickToEnlargeMenu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MC29DLSP7;
 				INFOPLIST_FILE = ClickToEnlargeMenu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

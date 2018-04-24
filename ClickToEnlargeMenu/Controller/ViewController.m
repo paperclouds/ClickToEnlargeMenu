@@ -10,6 +10,7 @@
 #import "LineLayout.h"
 #import "CollectionViewCell.h"
 #import "UIColor+Extend.h"
+#import "SecondViewController.h"
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define largeCellWidth 150
@@ -18,9 +19,8 @@
 
 #define CellIdentifier  @"CellIdentifier"
 
-@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate>
+@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UINavigationControllerDelegate>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSIndexPath *selectIndex;
 
@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"ClickToEnlargeMenu";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _selectIndex = [NSIndexPath indexPathForItem:0 inSection:0];
     [self.view addSubview:self.collectionView];
 }
@@ -46,7 +48,7 @@
 -(UICollectionView *)collectionView{
     if (_collectionView == nil) {
         LineLayout *layout = [[LineLayout alloc]init];
-        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 100, screenWidth, height) collectionViewLayout:layout];
+        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 200, screenWidth, height) collectionViewLayout:layout];
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
         self.collectionView.backgroundColor = [UIColor clearColor];
@@ -63,16 +65,21 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier     forIndexPath:indexPath];
+    cell.tag = indexPath.row + 1000;
     NSString *color = self.dataArray[indexPath.item][@"color"];
     cell.backgroundColor = [UIColor colorWithHexString:color];
     cell.titleLbl.text = self.dataArray[indexPath.item][@"text"];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",indexPath.item]];
     if ([indexPath isEqual:_selectIndex]) {
         cell.titleLbl.transform = CGAffineTransformMakeRotation(0);
+        cell.imageView.hidden = NO;
     }else{
         cell.titleLbl.transform = CGAffineTransformMakeRotation(M_PI_2);
+        cell.imageView.hidden = YES;
     }
         cell.titleLbl.textAlignment = NSTextAlignmentCenter;
         cell.titleLbl.frame = cell.bounds;
+        cell.imageView.frame = cell.bounds;
     return cell;
 }
 
@@ -94,17 +101,28 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
      CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-    if (![_selectIndex isEqual:indexPath]) {
+    if ([_selectIndex isEqual:indexPath]) {
+        [self didSelectAtIndex:indexPath.item];
+    }else{
         _selectIndex = indexPath;
+        
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
             [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
                 cell.titleLbl.transform = CGAffineTransformMakeRotation(0);
-                } completion:^(BOOL finished) {
-                }];
+            } completion:^(BOOL finished) {
+            }];
         }];
     }
+}
+
+- (void)didSelectAtIndex:(NSInteger)index{
+    self.currentIndex = index;
+    SecondViewController *second = [[SecondViewController alloc]init];
+    second.index = index;
+    self.navigationController.delegate = second;
+    [self.navigationController pushViewController:second animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
