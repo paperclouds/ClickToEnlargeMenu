@@ -18,7 +18,7 @@
 
 新增了下拉tableView header图片放大的效果。
 
-iOS10.2上有bug，目前还没有找到解决办法
+iPhone7，iOS10.2上有bug，目前还没有找到解决办法
 
 参考链接：
 https://github.com/Cesaradu/CardTransitionDemo
