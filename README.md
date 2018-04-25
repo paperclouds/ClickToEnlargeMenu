@@ -10,13 +10,15 @@
 
 ![点击放大菜单2.gif](https://upload-images.jianshu.io/upload_images/2466108-9b500185f64d0074.gif?imageMogr2/auto-orient/strip)
 
-新增了点击图片放大的转场动画效果，支持iOS10.3以上版本
+新增了点击图片放大的转场动画效果
 
 更新：
 
 ![点击放大菜单3.gif](https://upload-images.jianshu.io/upload_images/2466108-f0c848b7677a5ba5.gif?imageMogr2/auto-orient/strip)
 
 新增了下拉tableView header图片放大的效果。
+
+iOS10.2上有bug，目前还没有找到解决办法
 
 参考链接：
 https://github.com/Cesaradu/CardTransitionDemo
