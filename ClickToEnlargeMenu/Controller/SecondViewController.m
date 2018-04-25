@@ -59,9 +59,9 @@
 - (void)buildTableHeadView{
     
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, HeaderHeight)];
-    headerView.backgroundColor = [UIColor clearColor];
     
-    self.topImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld",_index]]];
+    self.topImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)_index]]];
+    self.topImageView.backgroundColor = [UIColor clearColor];
     self.topImageView.userInteractionEnabled = YES;
     self.topImageView.frame = CGRectMake(0, 0, screenWidth, HeaderHeight);
     [headerView addSubview:self.topImageView];
