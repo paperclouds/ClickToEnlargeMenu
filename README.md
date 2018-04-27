@@ -18,11 +18,13 @@
 
 新增了下拉tableView header图片放大的效果。
 
-iPhone7，iOS10.2及以下版本上有bug，目前还没有找到解决办法
 
 参考链接：
 https://github.com/Cesaradu/CardTransitionDemo
 
 http://code.cocoachina.com/view/135423
+
+https://github.com/wazrx/XWTransition/issues/4
+
 
 本项目github地址：https://github.com/paperclouds/ClickToEnlargeMenu
