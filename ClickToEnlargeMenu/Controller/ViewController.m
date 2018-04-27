@@ -13,8 +13,9 @@
 #import "SecondViewController.h"
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
-#define largeCellWidth 150
-#define height 200
+#define WIDTH screenWidth/375
+#define largeCellWidth 150*WIDTH
+#define height 200*WIDTH
 #define lineSpace 5
 
 #define CellIdentifier  @"CellIdentifier"
@@ -48,7 +49,7 @@
 -(UICollectionView *)collectionView{
     if (_collectionView == nil) {
         LineLayout *layout = [[LineLayout alloc]init];
-        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 200, screenWidth, height) collectionViewLayout:layout];
+        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, height, screenWidth, height) collectionViewLayout:layout];
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
         self.collectionView.backgroundColor = [UIColor clearColor];

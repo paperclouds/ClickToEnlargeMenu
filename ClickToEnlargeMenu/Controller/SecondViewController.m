@@ -12,7 +12,8 @@
 #define CellID @"CellID"
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
-#define HeaderHeight 250
+#define WIDTH screenWidth/375
+#define HeaderHeight 200
 
 @interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -50,7 +51,7 @@
     [self buildTableHeadView];
     
     UIButton *backBtn = [[UIButton alloc] init];
-    backBtn.frame = CGRectMake(20, 20, 50, 50);
+    backBtn.frame = CGRectMake(20*WIDTH, 20*WIDTH, 50*WIDTH, 50*WIDTH);
     [backBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(clickBackBtn) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
@@ -58,19 +59,19 @@
 
 - (void)buildTableHeadView{
     
-    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, HeaderHeight)];
+    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, HeaderHeight*WIDTH)];
     
-    self.topImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)_index]]];
+    self.topImageView = [[UIImageView alloc]initWithFrame:headerView.frame];
     self.topImageView.backgroundColor = [UIColor clearColor];
     self.topImageView.userInteractionEnabled = YES;
-    self.topImageView.frame = CGRectMake(0, 0, screenWidth, HeaderHeight);
     [headerView addSubview:self.topImageView];
+    [self.topImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)_index]]];
     self.bgImgView = self.topImageView;
     
     self.tableView.tableHeaderView = headerView;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSourcer
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 15;
@@ -94,16 +95,16 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+
     CGFloat offsetY = scrollView.contentOffset.y;
-    
+
     if (offsetY < 0) {
         CGFloat totalOffsetY = HeaderHeight + ABS(offsetY);
         CGFloat f = totalOffsetY / HeaderHeight;
-        
-        self.bgImgView.frame = CGRectMake(- (screenWidth * f - screenWidth) / 2, offsetY, screenWidth * f, totalOffsetY);
+
+        self.bgImgView.frame = CGRectMake(- (screenWidth * f - screenWidth) / 2, offsetY, screenWidth * f, totalOffsetY*WIDTH);
     }
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
