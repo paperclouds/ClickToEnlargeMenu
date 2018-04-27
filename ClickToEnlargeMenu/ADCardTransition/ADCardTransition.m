@@ -74,7 +74,7 @@
     
     UIView *containerView = [transitionContext containerView];
     //图片
-    UIView *imageView = [cell.imageView snapshotViewAfterScreenUpdates:NO];
+    UIView *imageView = [self imageFromView:cell.imageView];
     imageView.frame = [cell.imageView convertRect:cell.imageView.bounds toView: containerView];
     
     //设置动画前的各个控件的状态
@@ -97,6 +97,18 @@
         toVC.tableView.hidden = NO;
         [transitionContext completeTransition:YES];
     }];
+}
+
+- (UIView *)imageFromView:(UIView *)snapView{
+        UIGraphicsBeginImageContext(snapView.frame.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [snapView.layer renderInContext:context];
+        UIImage * targetImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    
+        UIImageView * tmpView = [[UIImageView alloc] initWithImage:targetImage];
+        snapView.frame = snapView.frame;
+        return tmpView;
 }
 
 //执行pop过渡动画
