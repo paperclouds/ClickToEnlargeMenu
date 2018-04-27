@@ -107,7 +107,9 @@
         _selectIndex = indexPath;
         
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+             dispatch_async(dispatch_get_main_queue(), ^{
+            [collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+             });
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
                 cell.titleLbl.transform = CGAffineTransformMakeRotation(0);
