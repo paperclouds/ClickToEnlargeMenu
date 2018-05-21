@@ -15,7 +15,7 @@
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define WIDTH screenWidth/375
 #define largeCellWidth 150*WIDTH
-#define height 200*WIDTH
+#define Height 200*WIDTH
 #define lineSpace 5
 
 #define CellIdentifier  @"CellIdentifier"
@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSIndexPath *selectIndex;
+@property (strong , nonatomic) NSIndexPath * m_lastAccessed;
 
 @end
 
@@ -49,13 +50,57 @@
 -(UICollectionView *)collectionView{
     if (_collectionView == nil) {
         LineLayout *layout = [[LineLayout alloc]init];
-        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, height, screenWidth, height) collectionViewLayout:layout];
+        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, Height, screenWidth, Height) collectionViewLayout:layout];
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
         self.collectionView.backgroundColor = [UIColor clearColor];
         [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
+        UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+        [self.collectionView addGestureRecognizer:panGesture];
     }
     return _collectionView;
+}
+
+-(void)panGesture:(UIPanGestureRecognizer*)gestureRecognizer
+{
+    switch (gestureRecognizer.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            float pointerX = [gestureRecognizer locationInView:self.collectionView].x;
+            float pointerY = [gestureRecognizer locationInView:self.collectionView].y;
+            for(CollectionViewCell* cell1 in self.collectionView.visibleCells) {
+                float cellLeftTop = cell1.frame.origin.x;
+                float cellRightTop = cellLeftTop + cell1.frame.size.width;
+                float cellLeftBottom = cell1.frame.origin.y;
+                float cellRightBottom = cellLeftBottom + cell1.frame.size.height;
+                
+                if (pointerX >= cellLeftTop && pointerX <= cellRightTop && pointerY >= cellLeftBottom && pointerY <= cellRightBottom) {
+                    NSIndexPath* touchOver = [self.collectionView indexPathForCell:cell1];
+                    if (self.m_lastAccessed != touchOver) {
+                        if (cell1.selected) {
+                            [self collectionView:self.collectionView didDeselectItemAtIndexPath:touchOver];
+                        }
+                        else
+                        {
+                            [self collectionView:self.collectionView didSelectItemAtIndexPath:touchOver];
+                            
+                        }
+                    }
+                    
+                    self.m_lastAccessed = touchOver;
+                    
+                }
+            }
+            if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+                self.m_lastAccessed = nil;
+                self.collectionView.scrollEnabled = YES;
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -70,7 +115,7 @@
     NSString *color = self.dataArray[indexPath.item][@"color"];
     cell.backgroundColor = [UIColor colorWithHexString:color];
     cell.titleLbl.text = self.dataArray[indexPath.item][@"text"];
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",indexPath.item]];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)indexPath.item]];
     if ([indexPath isEqual:_selectIndex]) {
         cell.titleLbl.transform = CGAffineTransformMakeRotation(0);
         cell.imageView.hidden = NO;
@@ -88,9 +133,9 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if ([indexPath isEqual:_selectIndex]) {
-        return CGSizeMake(largeCellWidth, height);
+        return CGSizeMake(largeCellWidth, Height);
     }else{
-        return CGSizeMake((screenWidth-largeCellWidth-lineSpace*(self.dataArray.count-1))/(self.dataArray.count-1), height);
+        return CGSizeMake((screenWidth-largeCellWidth-lineSpace*(self.dataArray.count-1))/(self.dataArray.count-1), Height);
     }
 }
 
@@ -104,6 +149,7 @@
      CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     if ([_selectIndex isEqual:indexPath]) {
         [self didSelectAtIndex:indexPath.item];
+        self.m_lastAccessed = indexPath;
     }else{
         _selectIndex = indexPath;
         
