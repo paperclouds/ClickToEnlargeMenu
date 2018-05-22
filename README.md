@@ -18,6 +18,8 @@
 
 新增了下拉tableView header图片放大的效果。
 
+更新：新增左右滑动展开图片的效果
+
 
 参考链接：
 https://github.com/Cesaradu/CardTransitionDemo
@@ -25,6 +27,8 @@ https://github.com/Cesaradu/CardTransitionDemo
 http://code.cocoachina.com/view/135423
 
 https://github.com/wazrx/XWTransition/issues/4
+
+https://blog.csdn.net/qqmcy/article/details/18813045
 
 
 本项目github地址：https://github.com/paperclouds/ClickToEnlargeMenu
