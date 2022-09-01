@@ -1,6 +1,6 @@
  # 点击放大菜单
  
-![点击放大菜单.gif](https://upload-images.jianshu.io/upload_images/2466108-e48649d02832f4a2.gif?imageMogr2/auto-orient/strip)
+![点击放大菜单.gif](https://raw.githubusercontent.com/paperclouds/ClickToEnlargeMenu/master/%E7%82%B9%E5%87%BB%E6%94%BE%E5%A4%A7%E8%8F%9C%E5%8D%95.gif)
 
 点击可以放大的菜单，并且对文字加了旋转效果。
 
@@ -8,13 +8,15 @@
 
 更新：
 
-![点击放大菜单2.gif](https://upload-images.jianshu.io/upload_images/2466108-9b500185f64d0074.gif?imageMogr2/auto-orient/strip)
+![点击放大菜单2.gif](https://raw.githubusercontent.com/paperclouds/ClickToEnlargeMenu/master/%E7%82%B9%E5%87%BB%E6%94%BE%E5%A4%A7%E8%8F%9C%E5%8D%952.gif)
+
+
 
 新增了点击图片放大的转场动画效果
 
 更新：
 
-![点击放大菜单3.gif](https://upload-images.jianshu.io/upload_images/2466108-f0c848b7677a5ba5.gif?imageMogr2/auto-orient/strip)
+![点击放大菜单3.gif](https://raw.githubusercontent.com/paperclouds/ClickToEnlargeMenu/master/%E7%82%B9%E5%87%BB%E6%94%BE%E5%A4%A7%E8%8F%9C%E5%8D%953.gif)
 
 新增了下拉tableView header图片放大的效果。
 
